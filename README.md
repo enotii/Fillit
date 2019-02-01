@@ -4,5 +4,5 @@ ITS AMAZING PROJECT by caking and mbeagan
 
 for start:
 
-`make`
+`make\n`
 `./test_fillit [file with Tetriminos]`
