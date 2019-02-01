@@ -15,8 +15,14 @@
 int main (int ac, char **av)
 {
 	int fd;
+	int flag;
 
+	flag = ac;
 	fd = open(av[1], O_RDONLY);
-	printf("%d", ft_read_map(fd));
+	flag = ft_read_map(fd);
+	if (flag == 0)
+		printf("error\n");
+	else
+	printf("valid\n");
 	return (0);	
 }
