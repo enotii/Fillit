@@ -21,8 +21,8 @@ int main (int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	flag = ft_read_map(fd);
 	if (flag == 0)
-		printf("error\n");
+		printf("error\t%d\n", flag);
 	else
-	printf("valid\n");
+		printf("valid\t%d\n", flag);
 	return (0);	
 }
