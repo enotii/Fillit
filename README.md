@@ -1,6 +1,6 @@
 # Fillit
 
-ITS AMAZING PROJECT by caking and mbeagan
+ITS AMAZING PROJECT by caking and mbeahan
 
 for start:
 1.`make`
