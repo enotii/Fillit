@@ -3,6 +3,5 @@
 ITS AMAZING PROJECT by caking and mbeagan
 
 for start:
-
-`make\n`
-`./test_fillit [file with Tetriminos]`
+1.`make`
+2.`./test_fillit [file with Tetriminos]`
