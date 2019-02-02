@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 19:17:03 by caking            #+#    #+#             */
-/*   Updated: 2019/02/02 22:13:09 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/02 22:25:06 by mbeahan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	flag = ft_read_map(fd);
 	if (flag == 0)
-		printf(MAGENTA("error\t%d\n"), flag);
+		printf(MAGENTA("error\n"));
 	else
 	{
 	//	ft_fill_it(fd);
-		printf(MAGENTA("valid\t%d\n"), flag);
+		printf(GREEN("valid\t%d\n"), flag);
 	}
 		close (fd);
 	return (0);	

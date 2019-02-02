@@ -9,7 +9,9 @@ $(NAME):
 	clang -Wall -Wextra -Werror -I libft/ -o main.o -c main.c
 	clang -o $(NAME) main.o ft_read_map.o -I libft/ -L libft/ -lft
 clean:
+	rm -rf libft/*.o
 	rm -rf *.o
 fclean: clean
 	rm -rf $(NAME)
+	rm -rf libft/libft.a
 re: fclean all
