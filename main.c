@@ -6,7 +6,7 @@
 /*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 19:17:03 by caking            #+#    #+#             */
-/*   Updated: 2019/02/02 23:43:03 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/03 01:09:03 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ int main(int ac, char **av)
 	{
 		if (ft_read_map(fd) == 1)
 		{
-		printf(GREEN("valid\n"));
+		ft_putstr(GREEN("valid\n"));
 		//ft_fill_it(fd);
 		}
 		else
-		printf(PINK("error\n"));
+		ft_putstr(PINK("error\n"));
 	}
+	else 
+		ft_putstr("usage: fillit input_file\n");
 		close (fd);
 	return (0);	
 }
