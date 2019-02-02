@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alexandr <Alexandr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 21:54:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/01 23:59:28 by Alexandr         ###   ########.fr       */
+/*   Updated: 2019/02/02 20:51:26 by mbeahan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_check_symbols(int dot, int sharp, int bn, char *map)
 	int i;
 
 	i = 0;
-	if (bn == 3 || bn == 5)
+	if (bn == 5)
 	{
 		if (dot == 12 && sharp == 4)
 		{
@@ -56,6 +56,27 @@ int	ft_check_symbols(int dot, int sharp, int bn, char *map)
 		}
 	}
 	return (0);
+}
+
+int	ft_check_strings(char *map)
+{
+	int len;
+	int i;
+
+	i = 0;
+	len = 0;
+	while (map[i] != '\0' && i < 19)
+	{
+		if (map[i] == '\n')
+		{
+			if (len < 4 || len > 4)
+				return (0);
+			len = -1;
+		}
+		len++;
+		i++;
+	}
+	return (1);
 }
 
 int	ft_count_symbs(char *map)
@@ -81,7 +102,9 @@ int	ft_count_symbs(char *map)
 			return (0);
 		i++;
 	}
-	return (ft_check_symbols(dot, sharp, bn, map));
+	if (ft_check_strings(map) == 1)
+		return (ft_check_symbols(dot, sharp, bn, map));
+	return (0);
 }
 
 int	ft_read_map(int fd)
