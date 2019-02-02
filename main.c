@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 19:17:03 by caking            #+#    #+#             */
-/*   Updated: 2019/02/02 22:25:06 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/02 23:30:54 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	flag = ft_read_map(fd);
 	if (flag == 0)
-		printf(MAGENTA("error\n"));
+		printf(PINK("error\n"));
 	else
 	{
 	//	ft_fill_it(fd);
