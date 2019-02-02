@@ -6,7 +6,7 @@
 /*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 21:54:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/02 20:51:26 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/02 21:51:52 by mbeahan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_check_symbols(int dot, int sharp, int bn, char *map)
 	int i;
 
 	i = 0;
-	if (bn == 5)
+	if (bn == 5 || bn == 4)
 	{
 		if (dot == 12 && sharp == 4)
 		{
