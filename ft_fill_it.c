@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_fill_it.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/01 16:27:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/02 22:12:09 by caking           ###   ########.fr       */
+/*   Created: 2019/02/02 19:22:04 by caking            #+#    #+#             */
+/*   Updated: 2019/02/02 22:14:55 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define MAP_SIZE 21
-# include <fcntl.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include "libft/libft.h"
-# define MAGENTA(x) "\033[35;1m" x "\033[0m"
-# define GREEN(x) "\033[32;1m" x "\033[0m"
+#include "fillit.h"
 
-int ft_read_map(int fd);
-void ft_fill_it(int fd);
-
-#endif
+void ft_fill_it(int fd)
+{
+ int f;
+ f = fd;
+}
