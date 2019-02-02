@@ -6,7 +6,7 @@
 /*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 19:17:03 by caking            #+#    #+#             */
-/*   Updated: 2019/02/02 23:30:54 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/02 23:43:03 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 int main(int ac, char **av)
 {
 	int		fd;
-	int		flag;
 
-	flag = ac;
 	fd = open(av[1], O_RDONLY);
-	flag = ft_read_map(fd);
-	if (flag == 0)
-		printf(PINK("error\n"));
-	else
+	if (ac == 2)
 	{
-	//	ft_fill_it(fd);
-		printf(GREEN("valid\t%d\n"), flag);
+		if (ft_read_map(fd) == 1)
+		{
+		printf(GREEN("valid\n"));
+		//ft_fill_it(fd);
+		}
+		else
+		printf(PINK("error\n"));
 	}
 		close (fd);
 	return (0);	
