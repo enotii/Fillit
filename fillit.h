@@ -6,7 +6,7 @@
 /*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 16:27:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/04 21:00:25 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/04 21:29:19 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int fill_last_fig(char **split);
 int fill_begin_fig(char **split);
 char *fig_memmalloc(char *split, int begin_fig, int last_fig);
 void fill_list(t_figure **list, char ***split);
-
+char **fill_cycle(t_figure *tetriminos);
+size_t	find_size(t_figure *tetriminos);
 
 #endif
