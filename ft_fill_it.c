@@ -6,7 +6,7 @@
 /*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 19:22:04 by caking            #+#    #+#             */
-/*   Updated: 2019/02/04 19:52:30 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/04 20:57:55 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,14 @@ void change_letters(char **split, char ch)
     }
 }
 
-void ft_fill_letters(t_figure **result, char buff[21], char ch)
+void ft_fill_parsing(t_figure **result, char buff[21], char ch)
 {
     char **split;
 
     ft_split(buff);
     split = ft_strsplit(buff, '\n');
     change_letters(split, ch);
+    fill_list(result, &split);
 }
 
 t_figure ft_fill_read(int fd, t_figure *result)
@@ -87,7 +88,7 @@ t_figure ft_fill_read(int fd, t_figure *result)
         if ((i = read(fd, buff, 21)) == 21)
             j = 1;
         if ((i == 20 || i == 21) && !(buff[20] = 0))
-            ft_fill_letters(&result, buff, ch++);
+            ft_fill_parsing(&result, buff, ch++);
     }
     return (result);
 }

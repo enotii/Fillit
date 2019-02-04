@@ -6,7 +6,7 @@
 /*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 19:22:57 by kristinazue       #+#    #+#             */
-/*   Updated: 2019/02/04 19:38:42 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/04 20:57:32 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,23 @@ int fill_begin_fig(char **split)
         i++;
     }
     return (0);
+}
+void fill_list(t_figure **list, char ***split)
+{
+    t_figure *list_buff;
+
+    list_buff = *list;
+    if(!*list)
+    {
+        *list = (t_figure*)malloc(sizeof(t_figure));
+        (*list)->next = NULL;
+        (*list)->figure = *split;
+        return ;
+    }
+    while ((*list)->next)
+        *list = (*list)->next;
+    (*list)->next = (t_figure*)malloc(sizeof(t_figure));
+    (*list)->next->next = NULL;
+    (*list)->next->figure = *split;
+    *list = list_buff;
 }
