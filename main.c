@@ -15,6 +15,7 @@
 int main(int ac, char **av)
 {
 	int		fd;
+	t_figure *result;
 
 	fd = open(av[1], O_RDONLY);
 	if (ac == 2)
@@ -22,7 +23,7 @@ int main(int ac, char **av)
 		if (ft_read_map(fd) == 1)
 		{
 		ft_putstr(GREEN("valid\n"));
-		//ft_fill_it(fd);
+		ft_fill_read(fd,result);
 		}
 		else
 		ft_putstr(PINK("error\n"));

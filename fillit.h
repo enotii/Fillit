@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 16:27:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/02 23:31:04 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/04 19:35:11 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,19 @@
 # define PINK(x) "\033[35;1m" x "\033[0m"
 # define GREEN(x) "\033[32;1m" x "\033[0m"
 
+typedef struct		s_figure
+{
+	char			**figure;
+	struct s_figure	*next;
+}					t_figure;
+
 int ft_read_map(int fd);
-void ft_fill_it(int fd);
+t_figure ft_fill_read(int fd, t_figure *result);
+void ft_fill_letters(t_figure **result, char buff[21], char ch);
+void ft_split(char *buff);
+int ft_empty(char *str);
+int fill_last_fig(char **split);
+int fill_begin_fig(char **split);
+char *fig_memmalloc(char *split, int begin_fig, int last_fig);
 
 #endif
