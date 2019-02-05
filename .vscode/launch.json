@@ -5,11 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(lldb) Launch",
-            "type": "cppdbg",
-            "request": "launch",
+           "name": "(lldb) Launch",
             "program": "${workspaceFolder}/a.out",
-            "args": ["test.fillit"],
+            "args": ["test_5.fillit"],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],

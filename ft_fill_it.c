@@ -6,7 +6,7 @@
 /*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 19:22:04 by caking            #+#    #+#             */
-/*   Updated: 2019/02/04 20:57:55 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/05 14:07:49 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void ft_fill_parsing(t_figure **result, char buff[21], char ch)
     fill_list(result, &split);
 }
 
-t_figure ft_fill_read(int fd, t_figure *result)
+t_figure *ft_fill_read(int fd, t_figure *result)
 {
     char buff[21];
     int i;

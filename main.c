@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 19:17:03 by caking            #+#    #+#             */
-/*   Updated: 2019/02/03 01:09:03 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/05 14:20:06 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@ int main(int ac, char **av)
 	t_figure *result;
 
 	fd = open(av[1], O_RDONLY);
+	result = NULL;
 	if (ac == 2)
 	{
 		if (ft_read_map(fd) == 1)
 		{
 		ft_putstr(GREEN("valid\n"));
-		ft_fill_read(fd,result);
+		print_result(fill_cycle(ft_fill_read(fd,result)));
 		}
 		else
 		ft_putstr(PINK("error\n"));
