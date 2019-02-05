@@ -6,7 +6,7 @@
 /*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 13:10:54 by kristinazue       #+#    #+#             */
-/*   Updated: 2019/02/05 14:39:46 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/05 15:57:37 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,8 @@ void	print_result(char **map)
 
 	i = 0;
 	while (map[i])
-		ft_putendl(map[i++]);
+    {
+     ft_putstr(map[i]);
+     i++;
+    }
 }
