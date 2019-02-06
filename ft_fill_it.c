@@ -6,7 +6,7 @@
 /*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 19:22:04 by caking            #+#    #+#             */
-/*   Updated: 2019/02/05 16:15:02 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/06 14:27:18 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int ft_empty(char *str)
     int i;
 
     i = 0;
+    if (!str)
+		return (1);
     while (str[i])
     {
         if (str[i++] == '#')
@@ -76,15 +78,23 @@ void ft_fill_parsing(t_figure **result, char buff[21], char ch)
 
 t_figure *ft_fill_read(int fd, t_figure *result)
 {
-    char buff[21];
-    int i;
-    //int j;
+    char	buff[21];
+	int		j;
+    int     i;
     char ch;
 
-    ch = 'A';
-    i = 0;
-    i = read(fd, buff, 21);
-        if ((i == 20 || i == 21) && !(buff[20] = 0))
-            ft_fill_parsing(&result, buff, ch++);
-    return (result);
+	ch = 'A';
+    i = 0 ;
+	while (1 && !(j = 0))
+	{
+		if ((i = read(fd, buff, 21)) == 21)
+			j = 1;
+		if ((i == 20 || i == 21) && !(buff[20] = 0))
+		{
+			ft_fill_parsing(&result, buff, ch++);
+			if (!j)
+				break ;
+		}
+	}
+	return (result);
 }

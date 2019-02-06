@@ -6,28 +6,28 @@
 /*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 13:10:54 by kristinazue       #+#    #+#             */
-/*   Updated: 2019/02/05 15:57:37 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/06 14:28:46 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-size_t	find_size(t_figure *tetriminos)
+size_t	find_size(t_figure *figure)
 {
-	size_t i;
-	size_t j;
+	register size_t	i;
+	register size_t	j;
 
 	i = 0;
-	j = 0;
-	while (tetriminos->next)
+	j = 2;
+	while (figure->next)
 	{
 		i++;
-		tetriminos = tetriminos->next;
+		figure = figure->next;
 	}
-	i = i * 4;
+	i *= 4;
 	while (j * j < i)
 		j++;
-		return (j);
+	return (j);
 }
 
 void fill_map(t_figure *tetriminos, int *width, int *height)
@@ -85,8 +85,5 @@ void	print_result(char **map)
 
 	i = 0;
 	while (map[i])
-    {
-     ft_putstr(map[i]);
-     i++;
-    }
+		ft_putendl(map[i++]);
 }
