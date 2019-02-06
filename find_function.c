@@ -6,7 +6,7 @@
 /*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 13:10:54 by kristinazue       #+#    #+#             */
-/*   Updated: 2019/02/06 14:28:46 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/06 14:47:14 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,21 @@ int ft_del(char ***map)
 void	print_result(char **map)
 {
 	int	i;
+    int j;
 
 	i = 0;
 	while (map[i])
-		ft_putendl(map[i++]);
+    {
+        j = 4;
+        while (j > 0)
+        {
+            if (map[i][j] == '.')
+                printf(GREEN(" %c "), map[i][j]);
+            else
+                printf(PINK(" %c "), map[i][j]);
+            j--;
+        }
+        printf("\n");
+        i++;
+    }
 }
