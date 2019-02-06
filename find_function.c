@@ -6,25 +6,25 @@
 /*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 13:10:54 by kristinazue       #+#    #+#             */
-/*   Updated: 2019/02/06 14:47:14 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/06 15:17:02 by kristinazue      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-size_t	find_size(t_figure *figure)
+size_t	find_size(t_figure *tetriminos)
 {
-	register size_t	i;
-	register size_t	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 2;
-	while (figure->next)
+	while (tetriminos->next)
 	{
 		i++;
-		figure = figure->next;
+		tetriminos = tetriminos->next;
 	}
-	i *= 4;
+	i = i * 4;
 	while (j * j < i)
 		j++;
 	return (j);
@@ -87,16 +87,24 @@ void	print_result(char **map)
 	i = 0;
 	while (map[i])
     {
-        j = 4;
-        while (j > 0)
+        j = 0;
+        while (map[i][j])
         {
             if (map[i][j] == '.')
                 printf(GREEN(" %c "), map[i][j]);
             else
                 printf(PINK(" %c "), map[i][j]);
-            j--;
+            j++;
         }
         printf("\n");
         i++;
     }
+    	i = 0;
+	i = 0;
+	while (map[i])
+		{
+		ft_putstr(map[i]);
+		ft_putchar('\n');
+		i++;
+		}
 }
