@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_it.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 19:22:04 by caking            #+#    #+#             */
-/*   Updated: 2019/02/06 14:27:18 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/07 23:13:06 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,17 @@ void ft_split(char *buff)
 	i = 0;
 	split = ft_strsplit(buff, '\n');
     while (ft_empty(split[i]) && i < 4)
+    {
+        //printf ("%s\n", split[i]);
         i++;
+    }
     size = i;
     while (!ft_empty(split[size]) && size < 4)
+    {
+        printf ("%s\n", split[size]);
 		size++;
+    }
+    printf ("\n");
     ft_strclr(buff); //str = '\0'
     while (i < size)
     {
@@ -64,7 +71,14 @@ void change_letters(char **split, char ch)
         }
         i++;
     }
+    i = 0;
+    while(split[i])
+    {
+    printf ("%s\n", split[i]);
+    i++;
+    }
 }
+
 
 void ft_fill_parsing(t_figure **result, char buff[21], char ch)
 {

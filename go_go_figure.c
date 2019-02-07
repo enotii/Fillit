@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   go_go_figure.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 19:22:57 by kristinazue       #+#    #+#             */
-/*   Updated: 2019/02/04 20:57:32 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/07 23:39:10 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char *fig_memmalloc(char *split, int begin_fig, int last_fig)
     str = (char *)malloc(last_fig - begin_fig + 3);
     while (begin_fig <= last_fig)
     {
-        str[i] = split[i];
+        str[i] = split[begin_fig];
         i++;
         begin_fig++;
     }

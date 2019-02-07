@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_function.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/05 13:10:54 by kristinazue       #+#    #+#             */
-/*   Updated: 2019/02/06 15:17:02 by kristinazue      ###   ########.fr       */
+/*   Created: 2019/02/05 13:10:54 by caking            #+#    #+#             */
+/*   Updated: 2019/02/06 18:08:27 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

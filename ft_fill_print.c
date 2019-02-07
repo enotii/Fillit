@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_print.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kristinazueva <kristinazueva@student.42    +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 21:15:05 by kristinazue       #+#    #+#             */
-/*   Updated: 2019/02/05 14:43:27 by kristinazue      ###   ########.fr       */
+/*   Updated: 2019/02/06 16:03:39 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
