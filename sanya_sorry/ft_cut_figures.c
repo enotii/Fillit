@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cut_figures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 17:12:41 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/11 15:31:17 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/11 17:56:38 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,7 @@ t_figure	*start_cut(int fd)
 	int			ret;
 	int			*coords[2];
 
+	figures_lst = NULL;
 	if (!figures_lst)
 	{
 		figures_lst = (t_figure *)malloc(sizeof(t_figure));
@@ -154,4 +155,21 @@ t_figure	*start_cut(int fd)
 	ret == 0 ? figures_lst = NULL : 0;
 	figures_lst = buff;
 	return (figures_lst);
+}
+
+void print_figures(t_figure *figures_lst)
+{
+	int i;
+
+	while (figures_lst->next)
+	{
+		i = 0;
+		while(i < figures_lst->length)
+		{
+			ft_putendl(figures_lst->figure[i]);
+		//	ft_putchar('\n');
+			i++;
+		}
+		figures_lst = figures_lst->next;
+	}
 }

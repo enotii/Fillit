@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 16:27:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/07 23:40:31 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/11 17:51:52 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include "libft/libft.h"
+# define PINK(x) "\033[35;1m" x "\033[0m"
+# define GREEN(x) "\033[32;1m" x "\033[0m"
 
 typedef struct	s_figure
 {
@@ -29,5 +31,6 @@ typedef struct	s_figure
 
 t_figure	*start_cut(int fd);
 int			ft_read_map(int fd);
+void print_figures(t_figure *figures_lst);
 
 #endif

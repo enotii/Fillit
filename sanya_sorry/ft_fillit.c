@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fillit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 00:07:02 by Alexandr          #+#    #+#             */
-/*   Updated: 2019/02/09 16:32:46 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/11 16:50:29 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,11 +105,11 @@ void save_prev(char **map, int size, int flag, int right, int bot)
     }
 }
 
-int paste_figures(t_figure *figures_lst, char **map, int size)
+void paste_figures(t_figure *figures_lst, char **map, int size)
 {
     static int  right;
     static int  bot;
-    char        **prev_map;
+   // char        **prev_map;
     int         i;
     int         j;
 
@@ -131,7 +131,7 @@ int paste_figures(t_figure *figures_lst, char **map, int size)
         {
             if (right != size)
                 right++;
-            if (right == size && bot != bot)
+            if (right == size)
                 bot++;
             if (right == size && bot == size)
             {
