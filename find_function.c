@@ -6,7 +6,7 @@
 /*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 13:10:54 by caking            #+#    #+#             */
-/*   Updated: 2019/02/06 18:08:27 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/09 22:58:12 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,12 +99,12 @@ void	print_result(char **map)
         printf("\n");
         i++;
     }
-    	i = 0;
+/*    	i = 0;
 	i = 0;
 	while (map[i])
 		{
 		ft_putstr(map[i]);
 		ft_putchar('\n');
 		i++;
-		}
+		}*/
 }

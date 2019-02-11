@@ -6,7 +6,7 @@
 /*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 21:15:05 by kristinazue       #+#    #+#             */
-/*   Updated: 2019/02/06 16:03:39 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/11 14:19:16 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,10 @@ int fill_it(t_figure *tetriminos, size_t size)
 					return (ft_del(&mapbuff));
 				result = mapbuff;
 			}
+	
+	print_result(result);
+	getchar();
+    system("clear");
 		}
 	}
 	return(0);
