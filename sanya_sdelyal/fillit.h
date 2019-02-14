@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 16:27:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/14 21:47:21 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/15 00:19:13 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,22 @@ typedef struct	s_figure
 void	start_cut(int fd);
 int			ft_read_map(int fd);
 void solve_fill(t_figure *lst);
-int fill_it(t_figure *lst, int size, int i, int j);
+char **fill_it(t_figure *lst, int size, int i, int j);
 t_figure *save_lst(t_figure *lst);
-void free_map(unsigned char **map, int size);
-void delete_overlay(t_figure *lst, int size, unsigned char **map);
-int check_overlay(int size, unsigned char **map);
+void free_map(char **map, int size);
+void delete_overlay(t_figure *lst, int size, char **map);
+int check_overlay(int size, char **map);
 size_t  optimal_size(t_figure *figures_lst);
-unsigned char   **create_map(t_figure *lst, int size);
+char   **create_map(t_figure *lst, int size);
 int			get_width(char tetrimino[22], int *x);
 int		get_length(char tetrimino[22], int *y);
 void	cut_figure(char tetrimino[22], int *m[2], t_figure *lst);
 void	change_sharps(t_figure *lst, char **figure);
 void print_figures(t_figure *lst);
-
+int ft_sanya__ne_sdelal(t_figure *lst,int size);
+char **ft_mapcpy(char **map);
+void	print_result(char **map);
+int ft_del(char ***map);
+int gogo_place(int x, int y, t_figure *lst);
 
 #endif

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 16:50:14 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/14 20:36:00 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/14 22:42:22 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(unsigned char *s)
+void	ft_putstr(char *s)
 {
 	int i;
 
