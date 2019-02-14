@@ -6,7 +6,7 @@
 /*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 16:27:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/13 19:08:15 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/14 21:47:21 by mbeahan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,18 @@ typedef struct	s_figure
 
 void	start_cut(int fd);
 int			ft_read_map(int fd);
+void solve_fill(t_figure *lst);
+int fill_it(t_figure *lst, int size, int i, int j);
+t_figure *save_lst(t_figure *lst);
+void free_map(unsigned char **map, int size);
+void delete_overlay(t_figure *lst, int size, unsigned char **map);
+int check_overlay(int size, unsigned char **map);
+size_t  optimal_size(t_figure *figures_lst);
+unsigned char   **create_map(t_figure *lst, int size);
 int			get_width(char tetrimino[22], int *x);
 int		get_length(char tetrimino[22], int *y);
 void	cut_figure(char tetrimino[22], int *m[2], t_figure *lst);
 void	change_sharps(t_figure *lst, char **figure);
-void   solve_fill(t_figure *lst);
-int fill_map(t_figure *lst, int size,char **map);
-void delete_overlay(t_figure *lst, int size, char **map);
-int check_overlay(int size, char **map);
-size_t  optimal_size(t_figure *figures_lst);
-void    create_map(t_figure *lst, int size, char **map);
 void print_figures(t_figure *lst);
 
 

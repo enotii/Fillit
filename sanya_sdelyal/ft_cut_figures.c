@@ -6,7 +6,7 @@
 /*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 17:12:41 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/14 15:54:16 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/14 20:21:17 by mbeahan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,5 +158,5 @@ void	start_cut(int fd)
 	}
 	ret == 0 ? figures_lst = NULL : 0;
 	figures_lst = buff;
-	print_figures(figures_lst);
+	solve_fill(figures_lst);
 }
