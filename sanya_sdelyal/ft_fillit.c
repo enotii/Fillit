@@ -6,14 +6,15 @@
 /*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 00:07:02 by Alexandr          #+#    #+#             */
-/*   Updated: 2019/02/15 00:20:20 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/15 00:29:14 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
 char **map;
 
-char   **create_map(t_figure *lst, int size)
+char   **create_map(int size)
 {
     int             i;
     int             j;
@@ -227,16 +228,16 @@ int ft_sanya__ne_sdelal(t_figure *lst,int size)
     return(0);
 }
 
-char **fill_it(t_figure *lst, int size, int i, int j)
+char **fill_it(t_figure *lst, int size)
 {
   //  char **map;
 
-    create_map(lst,size);
+    create_map(size);
     while(!(ft_sanya__ne_sdelal(lst,size)))
     {
         size++;
         free_map(map,size);
-        create_map(lst,size);
+        create_map(size);
     }
     return (map);
 }
@@ -250,5 +251,5 @@ void solve_fill(t_figure *lst)
     i = 0;
     j = 0;
     size = optimal_size(lst);
-    fill_it(lst,size, i, j);
+    fill_it(lst,size);
 }
