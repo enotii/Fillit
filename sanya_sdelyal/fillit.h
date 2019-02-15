@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 16:27:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/15 00:30:13 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/15 12:20:37 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ char **ft_mapcpy(char **map);
 void	print_result(char **map);
 int ft_del(char ***map);
 int gogo_place(int x, int y, t_figure *lst);
+void ft_maping(int size);
 
 #endif

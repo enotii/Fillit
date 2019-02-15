@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fillit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 00:07:02 by Alexandr          #+#    #+#             */
-/*   Updated: 2019/02/15 00:29:14 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/15 12:25:03 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char   **create_map(int size)
         map[i] = (char *)malloc(sizeof(char) * size + 1);
         while (j != size)
         {
-            map[i][j] = 0;
+            map[i][j] = '.';
             j++;
         }
         map[i][j] = '\0';
@@ -130,6 +130,22 @@ char **ft_mapcpy(char **map)
     return (result);
 }
 
+
+void ft_maping(int size)
+{
+	int i;
+
+	i = 0;
+	map = (char **)malloc(sizeof(char*) * (size + 1));
+	while (i < size)
+	{
+		map[i] = ft_strnew(size);
+		ft_memset((void *)map[i], '.', size); //поле точками
+		i++;
+	}
+	map[i] = NULL;
+}
+
 void find_place(int x, int y, t_figure *lst)
 {
 	register int	i;
@@ -141,7 +157,7 @@ void find_place(int x, int y, t_figure *lst)
 		j = 0;
 		while (j < lst->width)
 		{
-			if ((lst->figure)[i][j] != 0 && (lst->figure)[i][j])
+			if ((lst->figure)[i][j] != '.' && (lst->figure)[i][j])
 				map[y + i][x + j] = lst->figure[i][j];
 			j++;
 		}
@@ -160,7 +176,7 @@ int gogo_place(int x, int y, t_figure *lst)
 		j = 0;
 		while (j < lst->width)
 		{
-			if (map[y + i][x + j] != 0 && (lst->figure)[i][j] != 0
+			if (map[y + i][x + j] != '.' && (lst->figure)[i][j] != '.'
 				&& lst->figure[i][j])
 				return (0);
 			j++;
@@ -221,9 +237,6 @@ int ft_sanya__ne_sdelal(t_figure *lst,int size)
             map = mapbuff;
             }
         }    
-    print_result(map);
-	getchar();
-    system("clear");
     }
     return(0);
 }
@@ -232,12 +245,12 @@ char **fill_it(t_figure *lst, int size)
 {
   //  char **map;
 
-    create_map(size);
+    ft_maping(size);
     while(!(ft_sanya__ne_sdelal(lst,size)))
     {
         size++;
         free_map(map,size);
-        create_map(size);
+        ft_maping(size);
     }
     return (map);
 }
@@ -252,4 +265,6 @@ void solve_fill(t_figure *lst)
     j = 0;
     size = optimal_size(lst);
     fill_it(lst,size);
+    print_result(map);
+    //system("clear");
 }
