@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fillit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 00:07:02 by Alexandr          #+#    #+#             */
-/*   Updated: 2019/02/15 12:25:03 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/20 21:31:10 by mbeahan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,15 @@ size_t  optimal_size(t_figure *figures_lst)
     alph = 0;
     size = 0;
     count_tetr = 0;
-    while (figures_lst->next != NULL)
+    while (figures_lst->next)
     {
         figures_lst->alpha = alph + 65;
         count_tetr++;
         alph++;
         figures_lst = figures_lst->next;
     }
-    size = size * 4;
-	while (size * size < count_tetr - 1)
+    count_tetr = count_tetr * 4;
+	while (size * size < count_tetr)
 		size++;
 	return (size);
 }
