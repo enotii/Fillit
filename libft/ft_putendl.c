@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbeahan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 17:06:19 by mbeahan           #+#    #+#             */
-/*   Updated: 2018/12/16 14:48:37 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/14 22:42:05 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_putendl(char *s)
 {
 	int i;
 

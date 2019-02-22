@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking < caking@student.21-school.ru>      +#+  +:+       +#+        */
+/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 16:27:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/06 16:01:42 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/21 17:53:57 by mbeahan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,36 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include "libft/libft.h"
-# define PINK(x) "\033[35;1m" x "\033[0m"
-# define GREEN(x) "\033[32;1m" x "\033[0m"
 
-typedef struct		s_figure
+typedef struct	s_figure
 {
-	char			**figure;
+	char			alpha;
+	char 			**figure;
 	struct s_figure	*next;
-}					t_figure;
+	int				width;
+	int				length;
+	int				coords[2];
+}				t_figure;
 
-int 		ft_read_map(int fd);
-t_figure 	*ft_fill_read(int fd, t_figure *result);
-void 		ft_fill_parsing(t_figure **result, char buff[21], char ch);
-void 		ft_split(char *buff);
-int 		ft_empty(char *str);
-int 		fill_last_fig(char **split);
-int 		fill_begin_fig(char **split);
-char 		*fig_memmalloc(char *split, int begin_fig, int last_fig);
-void 		fill_list(t_figure **list, char ***split);
-char 		**fill_cycle(t_figure *tetriminos);
-size_t		find_size(t_figure *tetriminos);
-void 		ft_maping(size_t size);
-int 		fill_it(t_figure *tetriminos, size_t size);
-void 		fill_map(t_figure *tetriminos, int *width, int *height);
-int 		go_go_place(int xt, int yt, t_figure *tetriminos);
-int 		ft_del(char ***map);
-char 		**ft_mapcpy(char **map);
-void		print_result(char **map);
-void 		find_place(int xt, int yt, t_figure *tetriminos);
+void	start_cut(int fd);
+int		ft_read_map(int fd);
+void solve_fill(t_figure *lst);
+char **fill_it(t_figure *lst, int size);
+t_figure *save_lst(t_figure *lst);
+void free_map(char **map, int size);
+void delete_overlay(t_figure *lst, int size, char **map);
+int check_overlay(int size, char **map);
+size_t  optimal_size(t_figure *figures_lst);
+char   **create_map(int size);
+int			get_width(char tetrimino[22], t_figure *lst);
+int		get_length(char tetrimino[22], t_figure *lst);
+void	cut_figure(char tetrimino[22], t_figure *lst);
+void	change_sharps(t_figure *lst, char **figure);
+int ft_sanya__ne_sdelal(t_figure *lst,int size);
+char **ft_mapcpy(char **map);
+void	print_result(char **map);
+int ft_del(char ***map);
+int gogo_place(int x, int y, t_figure *lst);
+void ft_maping(int size);
 
 #endif

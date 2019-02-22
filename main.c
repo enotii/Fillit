@@ -3,36 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/02 19:17:03 by caking            #+#    #+#             */
-/*   Updated: 2019/02/06 16:03:54 by caking           ###   ########.fr       */
+/*   Created: 2019/02/22 20:40:53 by mbeahan           #+#    #+#             */
+/*   Updated: 2019/02/22 21:08:48 by mbeahan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int main(int ac, char **av)
+int main (int ac, char **av)
 {
-	int		fd;
-	t_figure *result;
+    int fd;
 
-	fd = open(av[ac - 1], O_RDONLY);
-	result = NULL;
-	if (ac == 2)
+    fd = open(av[ac - 1], O_RDONLY);
+  	if (ac == 2)
 	{
-		if (ft_read_map(fd) == 1)
+		if (ft_read_map(fd))
 		{
-		close (fd);
-		fd = open(av[ac - 1], O_RDONLY);
-		ft_putstr(GREEN("valid\n"));
-		print_result(fill_cycle(ft_fill_read(fd,result)));
+			close (fd);
+			fd = open(av[ac - 1], O_RDONLY);
+			start_cut(fd);
 		}
 		else
-		ft_putstr(PINK("error\n"));
+		ft_putstr("error\n");
 	}
-	else 
-		ft_putstr("usage: fillit input_file\n");
-		close (fd);
-	return (0);	
+    else
+	ft_putstr("usage: fillit input_file\n");    
+    close(fd);
+    return (0);
 }

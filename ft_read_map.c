@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 21:54:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/02 22:11:55 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/21 22:57:02 by mbeahan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,17 +112,37 @@ int	ft_read_map(int fd)
 	char	map[MAP_SIZE + 1];
 	int		ret;
 	int		flag;
+	int		i;
+	int 	count;
+	char	*buff;
 
+	i = 0;
+	count = 0;
 	flag = 0;
 	if (fd < 0)
 		return (0);
 	while ((ret = read(fd, map, MAP_SIZE)) > 0)
 	{
+		if (buff != NULL)
+			free(buff);
 		flag++;
 		map[ret] = '\0';
 		if (map[0] == '\0')
 			return (0);
 		if (ft_count_symbs(map) != 1)
+			return (0);
+		buff = ft_strdup((const char *)map);
+	}
+	if (ret == 0 && buff != NULL)
+	{
+		while (buff[i])
+		{
+			if (buff[i] == '\n')
+				count++;
+			i++;
+		}
+		free(buff);
+		if (count != 4)
 			return (0);
 	}
 	if (ret == 0 && flag == 0)
