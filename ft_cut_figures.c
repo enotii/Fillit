@@ -6,7 +6,7 @@
 /*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 17:12:41 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/22 20:55:10 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/02/22 22:29:36 by mbeahan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 
 void	change_sharps(t_figure *lst, char **figure)
 {
-	int			i;
-	int			j;
 	static int	temp;
 	int			width;
 	int			length;
 
 	length = 0;
-	i = 0;
-	j = 0;
 	lst->figure = (char **)malloc(sizeof(char *) * lst->length);
 	while (length != lst->length)
 	{
@@ -51,7 +47,6 @@ void	cut_figure(char tetrimino[22], t_figure *lst)
 	int		k;
 
 	i = 0;
-	k = 0;
 	k = (5 * (lst->coords[0]) + (lst->coords[1]));
 	figure = (char **)malloc(sizeof(char *) * lst->length);
 	while (tetrimino[k] != '\0')
@@ -61,11 +56,7 @@ void	cut_figure(char tetrimino[22], t_figure *lst)
 			j = 0;
 			figure[i] = (char *)malloc(sizeof(char) * (lst->width + 1));
 			while (j != lst->width)
-			{
-				figure[i][j] = tetrimino[k];
-				j++;
-				k++;
-			}
+				figure[i][j++] = tetrimino[k++];
 			figure[i][j] = '\0';
 			i++;
 			k = (5 * (lst->coords[0] + i) + (lst->coords[1]));
@@ -104,7 +95,7 @@ int		get_length(char tetrimino[22], t_figure *lst)
 	return ((last - first) + 1);
 }
 
-int			get_width(char tetrimino[22], t_figure *lst)
+int		get_width(char tetrimino[22], t_figure *lst)
 {
 	int last;
 	int i;
@@ -124,7 +115,8 @@ int			get_width(char tetrimino[22], t_figure *lst)
 			last = temp;
 			flag = 1;
 		}
-		tetrimino[i] == '#' && lst->coords[1] > temp ? lst->coords[1] = temp : 0;
+		if (tetrimino[i] == '#' && lst->coords[1] > temp)
+			lst->coords[1] = temp;
 		tetrimino[i] == '#' && temp > last ? last = temp : 0;
 		temp++;
 		i++;
