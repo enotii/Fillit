@@ -3,14 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 20:40:53 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/24 21:56:39 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/25 14:43:09 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+int			bn_counter(char *buff)
+{
+	int i;
+	int count;
+
+	i = 0;
+	count = 0;
+	while (buff[i])
+	{
+		if (buff[i] == '\n')
+			count++;
+		i++;
+	}
+	free(buff);
+	if (count != 4)
+		return (0);
+	return (1);
+}
+
+size_t		optimal_size(t_figure *figures_lst)
+{
+	int		alph;
+	size_t	count_tetr;
+	size_t	size;
+
+	alph = 0;
+	size = 0;
+	count_tetr = 0;
+	while (figures_lst->next)
+	{
+		figures_lst->alpha = alph + 65;
+		count_tetr++;
+		alph++;
+		figures_lst = figures_lst->next;
+	}
+	count_tetr = count_tetr * 4;
+	while (size * size < count_tetr)
+		size++;
+	return (size);
+}
 
 int		main(int ac, char **av)
 {
