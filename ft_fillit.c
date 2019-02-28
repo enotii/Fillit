@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fillit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.42.fr>              +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 00:07:02 by Alexandr          #+#    #+#             */
-/*   Updated: 2019/02/24 21:40:14 by caking           ###   ########.fr       */
+/*   Updated: 2019/02/27 18:19:11 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int			ft_sanya__ne_sdelal(t_figure *lst, int size)
 	return (0);
 }
 
-char		**fill_it(t_figure *lst, int size)
+int		fill_it(t_figure *lst, int size)
 {
 	ft_maping(size);
 	while (!(ft_sanya__ne_sdelal(lst, size)))
