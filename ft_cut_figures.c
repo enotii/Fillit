@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cut_figures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbeahan <mbeahan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 17:12:41 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/22 22:29:36 by mbeahan          ###   ########.fr       */
+/*   Updated: 2019/03/04 14:25:50 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	change_sharps(t_figure *lst, char **figure)
 	temp++;
 }
 
-void	cut_figure(char tetrimino[22], t_figure *lst)
+void	cut_figure(char tetrimino[2], t_figure *lst)
 {
 	char	**figure;
 	int		i;
@@ -145,7 +145,7 @@ void	start_cut(int fd)
 		figures_lst->length = get_length(tetrimino, figures_lst);
 		cut_figure(tetrimino, figures_lst);
 		figures_lst->next = (t_figure*)malloc(sizeof(t_figure));
-		figures_lst = figures_lst->next;
+		figures_lst = figures_lst->next;	
 	}
 	ret == 0 ? figures_lst = NULL : 0;
 	figures_lst = buff;

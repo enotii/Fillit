@@ -6,7 +6,7 @@
 /*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 20:40:53 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/02/25 14:43:09 by caking           ###   ########.fr       */
+/*   Updated: 2019/03/04 12:36:53 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ size_t		optimal_size(t_figure *figures_lst)
 	size_t	size;
 
 	alph = 0;
-	size = 0;
+	size = 2;
 	count_tetr = 0;
 	while (figures_lst->next)
 	{
