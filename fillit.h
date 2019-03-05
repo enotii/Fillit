@@ -6,7 +6,7 @@
 /*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 16:27:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/03/04 12:17:58 by caking           ###   ########.fr       */
+/*   Updated: 2019/03/05 13:25:01 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef	struct		s_figure
 void				start_cut(int fd);
 int					ft_read_map(int fd);
 void				solve_fill(t_figure *lst);
-int				fill_it(t_figure *lst, int size);
+int					fill_it(t_figure *lst, int size);
 t_figure			*save_lst(t_figure *lst);
 void				free_map(char **map, int size);
 void				delete_overlay(t_figure *lst, int size, char **map);

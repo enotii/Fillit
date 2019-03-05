@@ -16,3 +16,6 @@ fclean: clean
 	rm -rf $(NAME)
 	rm -rf libft/libft.a
 re: fclean all
+
+debug:
+	 gcc -ggdb main.c ft_read_map.c ft_fillit.c ft_cut_figures.c dfrnt_func.c -I libft/ -L libft/ -lft

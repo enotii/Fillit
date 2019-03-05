@@ -6,7 +6,7 @@
 /*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 20:40:53 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/03/04 12:36:53 by caking           ###   ########.fr       */
+/*   Updated: 2019/03/05 13:54:58 by caking           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,16 @@ int			bn_counter(char *buff)
 
 size_t		optimal_size(t_figure *figures_lst)
 {
-	int		alph;
+	char		alph;
 	size_t	count_tetr;
 	size_t	size;
 
-	alph = 0;
+	alph = 'A';
 	size = 2;
 	count_tetr = 0;
 	while (figures_lst->next)
 	{
-		figures_lst->alpha = alph + 65;
+		figures_lst->alpha = alph + 65 - 'A';
 		count_tetr++;
 		alph++;
 		figures_lst = figures_lst->next;
