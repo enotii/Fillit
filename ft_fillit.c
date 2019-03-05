@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fillit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: gachibass228 <marvin@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 00:07:02 by Alexandr          #+#    #+#             */
-/*   Updated: 2019/02/27 18:19:11 by caking           ###   ########.fr       */
+/*   Updated: 2019/03/05 23:06:18 by gachibass22      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int			ft_sanya__ne_sdelal(t_figure *lst, int size)
 					return (ft_del(&mapbuff));
 				if (ft_sanya__ne_sdelal(lst->next, size))
 					return (ft_del(&mapbuff));
+				ft_del(&g_map);
 				g_map = mapbuff;
 			}
 		}
@@ -81,7 +82,7 @@ int			ft_sanya__ne_sdelal(t_figure *lst, int size)
 	return (0);
 }
 
-int		fill_it(t_figure *lst, int size)
+int			fill_it(t_figure *lst, int size)
 {
 	ft_maping(size);
 	while (!(ft_sanya__ne_sdelal(lst, size)))
@@ -104,4 +105,5 @@ void		solve_fill(t_figure *lst)
 	size = optimal_size(lst);
 	fill_it(lst, size);
 	print_result(g_map);
+	free_list(lst);
 }

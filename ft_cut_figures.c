@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cut_figures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: gachibass228 <marvin@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 17:12:41 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/03/04 14:25:50 by caking           ###   ########.fr       */
+/*   Updated: 2019/03/05 23:18:43 by gachibass22      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,15 +140,15 @@ void	start_cut(int fd)
 	buff = figures_lst;
 	while ((ret = read(fd, tetrimino, MAP_SIZE)) > 0)
 	{
-		tetrimino[ret] = '\0';
 		figures_lst->width = get_width(tetrimino, figures_lst);
 		figures_lst->length = get_length(tetrimino, figures_lst);
 		cut_figure(tetrimino, figures_lst);
+		while (figures_lst->next)
+			figures_lst = figures_lst->next;
 		figures_lst->next = (t_figure*)malloc(sizeof(t_figure));
-		figures_lst = figures_lst->next;	
+		figures_lst->next->next = NULL;
+		figures_lst = figures_lst->next;
 	}
-	ret == 0 ? figures_lst = NULL : 0;
 	figures_lst = buff;
 	solve_fill(figures_lst);
-	free(figures_lst);
 }

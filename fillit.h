@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: gachibass228 <marvin@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/01 16:27:36 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/03/05 13:25:01 by caking           ###   ########.fr       */
+/*   Created: 2019/03/05 19:26:53 by gachibass22       #+#    #+#             */
+/*   Updated: 2019/03/05 23:19:02 by gachibass22      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef	struct		s_figure
 	int				width;
 	int				length;
 	int				coords[2];
+	int				count;
 }					t_figure;
 
 void				start_cut(int fd);
@@ -51,5 +52,6 @@ int					ft_del(char ***map);
 int					gogo_place(int x, int y, t_figure *lst);
 void				ft_maping(int size);
 int					bn_counter(char *buff);
+void				free_list(t_figure *figures_lst);
 
 #endif

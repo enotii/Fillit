@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caking <caking@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: gachibass228 <marvin@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 20:40:53 by mbeahan           #+#    #+#             */
-/*   Updated: 2019/03/05 13:54:58 by caking           ###   ########.fr       */
+/*   Updated: 2019/03/05 23:22:22 by gachibass22      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int			bn_counter(char *buff)
 
 size_t		optimal_size(t_figure *figures_lst)
 {
-	char		alph;
+	char	alph;
 	size_t	count_tetr;
 	size_t	size;
 
@@ -53,10 +53,24 @@ size_t		optimal_size(t_figure *figures_lst)
 	return (size);
 }
 
-int		main(int ac, char **av)
+void free_list(t_figure *figures_lst)
+{
+	int i;
+
+	i = 0;
+	while (i < figures_lst->length)
+	{
+		free(figures_lst->figure[i]);
+		++i;
+	}
+	free(figures_lst->figure);
+	free(figures_lst);
+}
+
+int			main(int ac, char **av)
 {
 	int		fd;
-
+	
 	fd = open(av[ac - 1], O_RDONLY);
 	if (ac == 2)
 	{
